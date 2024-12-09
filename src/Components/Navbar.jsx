@@ -1,18 +1,18 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from './provider/AuthProvider';
 
 const Navbar = () => {
+    const {user, logOut} = useContext(AuthContext);
     const links = <>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/all_visas">Add Visas</NavLink>
+        <NavLink to="/all_visas">All Visas</NavLink>
         <NavLink to="/add_visa">Add Visa</NavLink>
         <NavLink to="/my_added_visas">My Added Visa</NavLink>
         <NavLink to="/my_visa_application">My Visa Application</NavLink>
-        <NavLink to="/login">Login</NavLink>
-        <NavLink to="/register">Register</NavLink>
     </>
     return (
-        <div className='py-4 bg-red-200'>
+        <div className='py-4'>
             <div className="navbar w-11/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -44,7 +44,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                {
+                        user && user?.email ? (<><img className='w-10 h-10 rounded-full' src={user?.photoURL} title={user?.displayName} alt="User picture!" /><button onClick={logOut} className='btn bg-teal-400 text-white rounded-xl ml-1'>Log-Out</button> </>) : (<><Link to="/login" className='btn bg-teal-400 rounded-xl text-white'>Login</Link> <Link to="/register" className='btn bg-teal-400 rounded-lg ml-2 text-white'>Register</Link></>)
+                    }
                 </div>
             </div>
         </div>
