@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from './provider/AuthProvider';
 
 const AddVisa = () => {
+    const {user} = useContext(AuthContext);
     const handleAddVisa = event => {
         event.preventDefault();
 
@@ -18,6 +20,7 @@ const AddVisa = () => {
         const fee = form.fee.value;
         const validity = form.validity.value;
         const application_method = form.application_method.value;
+        const email = user.email;
 
         const newVisa = {
             country_image,
@@ -29,7 +32,8 @@ const AddVisa = () => {
             age_restriction,
             fee,
             validity,
-            application_method
+            application_method,
+            email,
         };
 
         // Send data to the server

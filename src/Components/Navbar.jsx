@@ -8,8 +8,8 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/all_visas">All Visas</NavLink>
         <NavLink to="/add_visa">Add Visa</NavLink>
-        <NavLink to="/my_added_visas">My Added Visa</NavLink>
-        <NavLink to="/my_visa_application">My Visa Application</NavLink>
+        <NavLink to={`/my_added_visas/${user?.email}`}>My Added Visa</NavLink>
+        <NavLink to={`/my_visa_application/${user?.email}`}>My Visa Application</NavLink>
     </>
     return (
         <div className='py-4'>

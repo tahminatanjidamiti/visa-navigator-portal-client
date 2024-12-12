@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const LatestVisa = ({loadedVisas}) => {
-    
     const [visas, setVisas] = useState(loadedVisas);
 
     
@@ -23,15 +22,15 @@ const LatestVisa = ({loadedVisas}) => {
                 <p><strong>Fee:</strong> {visa.fee}</p>
                 <p><strong>Validity:</strong> {visa.validity}</p>
                 <p><strong>Application Method:</strong> {visa.application_method}</p>
-                <Link to={`/visa_details/${visa._id}`} className="btn btn-primary mt-4">See Details</Link>
+                <Link to={`/visa_details/${visa._id}`} className="btn bg-teal-300 mt-4">See Details</Link>
               </div>
             </div>
           ))}
         </div>
   
-        {/* Button to view all visas */}
+        
         <div className="mt-8 text-center">
-          <Link to="/all-visas" className="btn bg-teal-400">See All Visas</Link>
+          <Link to="/all_visas" className="btn bg-teal-500">See All Visas</Link>
         </div>
       </div>
     );

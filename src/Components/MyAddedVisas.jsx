@@ -37,16 +37,18 @@ const MyAddedVisas = () => {
     const handleUpdate = (e) => {
         e.preventDefault();
         const updatedVisa = {
-            country: e.target.country.value,
+            country_image: e.target.country_image.value,
+            country_name: e.target.country_name.value,
             visa_type: e.target.visa_type.value,
             processing_time: e.target.processing_time.value,
             fee: e.target.fee.value,
             validity: e.target.validity.value,
             application_method: e.target.application_method.value,
+            description: e.target.description.value,
         };
 
         fetch(`http://localhost:5000/all_visas/${selectedVisa._id}`, {
-            method: 'PATCH',
+            method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedVisa),
         })
@@ -66,9 +68,9 @@ const MyAddedVisas = () => {
             <h1 className="text-3xl font-bold text-center mb-8">My Added Visas</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {visas.map(visa => (
-                    <div key={visa._id} className="card bg-base-100 shadow-xl p-4">
-                        <img src={visa.country_image} alt={visa.country} className="mb-4" />
-                        <h2 className="text-lg font-semibold">Country: {visa.country}</h2>
+                    <div key={visa._id} className="card border border-sky-100 bg-base-100 shadow-xl p-4">
+                        <img src={visa.country_image} alt={visa.country_name} className="mb-4 h-44" />
+                        <h2 className="text-lg font-semibold">Country: {visa.country_name}</h2>
                         <p>Visa Type: {visa.visa_type}</p>
                         <p>Processing Time: {visa.processing_time}</p>
                         <p>Fee: ${visa.fee}</p>
@@ -102,21 +104,46 @@ const MyAddedVisas = () => {
                         <h3 className="font-bold text-lg">Update Visa Information</h3>
                         <form onSubmit={handleUpdate}>
                             <div className="form-control">
-                                <label>Country</label>
+                                <label>
+                                    Country URL
+                                </label>
                                 <input
                                     type="text"
-                                    name="country"
-                                    defaultValue={selectedVisa.country}
+                                    name="country_image"
+                                    defaultValue={selectedVisa.country_image}
                                     className="input input-bordered"
                                     required
                                 />
                             </div>
+                            <div className="form-control">
+                                <label>
+                                    Country Name
+                                </label>
+                                <input
+                                    type="text"
+                                    name="country_name"
+                                    defaultValue={selectedVisa.country_name}
+                                    className="input input-bordered"
+                                    required
+                                />
+                            </div>
+
                             <div className="form-control">
                                 <label>Visa Type</label>
                                 <input
                                     type="text"
                                     name="visa_type"
                                     defaultValue={selectedVisa.visa_type}
+                                    className="input input-bordered"
+                                    required
+                                />
+                            </div>
+                            <div className="form-control">
+                                <label>Description</label>
+                                <input
+                                    type="text"
+                                    name="description"
+                                    defaultValue={selectedVisa.description}
                                     className="input input-bordered"
                                     required
                                 />

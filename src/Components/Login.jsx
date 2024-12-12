@@ -1,19 +1,32 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-
 import { FcGoogle } from "react-icons/fc";
-import { AuthContext } from './provider/AuthProvider';
+import { auth, AuthContext } from './provider/AuthProvider';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
-    const { userLogin, setUser, handleGoogleLogin } = useContext(AuthContext);
+    const { userLogin, setUser, } = useContext(AuthContext);
     const [error, setError] = useState({});
     const location = useLocation();
     const navigate = useNavigate();
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleLogin = () => {
+        signInWithPopup(auth, googleProvider)
+        .then(result => {
+            const user = result.user;
+            setUser(user);
+            navigate(location?.state ? location.state : "/");
+        })
+        .catch(err => {
+            setError({ ...error, login: err.code })
+        })
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        
+           
         
         userLogin(email, password)
         .then(result => {
