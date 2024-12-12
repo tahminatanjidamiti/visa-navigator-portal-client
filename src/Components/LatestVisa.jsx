@@ -8,7 +8,7 @@ const LatestVisa = ({loadedVisas}) => {
   
     return (
       <div className="bg-[#F4F3F0] p-8 md:p-24">
-        <h2 className="text-3xl font-extrabold mb-8">Latest Visas</h2>
+        <h2 className="text-3xl font-extrabold mb-8 flex justify-center items-center mx-auto">Latest Visas</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {visas.map((visa) => (
             <div key={visa._id} className="card w-full bg-white shadow-lg">
@@ -22,7 +22,7 @@ const LatestVisa = ({loadedVisas}) => {
                 <p><strong>Fee:</strong> {visa.fee}</p>
                 <p><strong>Validity:</strong> {visa.validity}</p>
                 <p><strong>Application Method:</strong> {visa.application_method}</p>
-                <Link to={`/visa_details/${visa._id}`} className="btn bg-teal-300 mt-4">See Details</Link>
+                <Link to={`/visa_details/${visa._id}`} className="btn bg-teal-300 mt-4 text-white">See Details</Link>
               </div>
             </div>
           ))}
