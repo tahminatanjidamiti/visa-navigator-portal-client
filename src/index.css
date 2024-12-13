@@ -13,9 +13,3 @@ body {
 .animate__fadeInDown {
   animation-duration: 5s;
 }
-.animate__fadeInLeft {
-  animation-duration: 5s;
-}
-.animate__fadeInRight {
-  animation-duration: 5s;
-}

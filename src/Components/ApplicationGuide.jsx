@@ -27,7 +27,7 @@ const ApplicationGuide = () => {
                 </ul>
             </div>
             <div className='my-10 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-5'>
-            <div className={`card ${animate ? 'animate__animated animate__fadeInLeft' : ''}`}>
+            <div className={`card ${animate ? 'animate__animated animate__fadeInDown' : ''}`}>
                 <figure className='h-[400px]'>
                     <img className='h-full w-full object-cover rounded-md'
                         src="https://i.ibb.co.com/tzsqGqC/first.webp"
@@ -43,7 +43,7 @@ const ApplicationGuide = () => {
                 </figure>
                 
             </div>
-            <div className={`card ${animate ? 'animate__animated animate__fadeInRight' : ''}`}>
+            <div className={`card ${animate ? 'animate__animated animate__fadeInDown' : ''}`}>
                 <figure className='h-[400px]'>
                     <img className='h-full w-full object-cover rounded-md'
                         src="https://i.ibb.co.com/yXJCBVW/apply-online-application-form-recruitment-concept.jpg"

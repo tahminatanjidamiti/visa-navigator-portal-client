@@ -1,9 +1,36 @@
 import React from 'react';
+import { Typewriter } from 'react-simple-typewriter'
 
 const KeyFeature = () => {
+    const handleType = (count) => {
+        console.log(`Word typed: ${count}`);
+    };
+    
+      const handleDone = () => {
+        console.log(`Done after 5 loops!`)
+      }
+
     return (
         <div className='my-20'>
-            <h2 className="text-3xl font-extrabold mb-8 flex justify-center items-center mx-auto">Our Standout Highlight</h2>
+            <div>
+                <h1 className="text-3xl font-extrabold mb-8 flex justify-center items-center mx-auto">
+                    Our Standout {' '}
+                    <span style={{ color: 'green', fontWeight: 'bold', paddingLeft: '10px' }}>
+                        <Typewriter
+                            words={['Highlight', 'Key Feature!']}
+                            loop={5}
+                            cursor
+                            cursorStyle='_'
+                            typeSpeed={70}
+                            deleteSpeed={50}
+                            delaySpeed={1000}
+                            onLoopDone={handleDone}
+                            onType={handleType}
+                        />
+                    </span>
+                </h1>
+            </div>
+            
             <p className='my-10 w-9/12 mx-auto text-center'>Unlock the key to effortless visa applications with our expert insights, up-to-the-minute updates, and tailored assistance, ensuring your international travel is smooth and stress-free.</p>
             <div>
                 <div className="card bg-teal-400 mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-11/12 mx-auto">
