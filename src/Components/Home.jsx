@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import LatestVisa from './LatestVisa';
 import { useLoaderData } from 'react-router-dom';
 import Banner from './Banner';
+import KeyFeature from './KeyFeature';
 
 const Home = () => {
     const loadedVisas = useLoaderData();
@@ -18,13 +19,13 @@ const Home = () => {
         }
     }, []);
 
-    // Toggle the theme
+    // Toggle the theme//
     const handleThemeToggle = () => {
         setIsDark((prev) => {
             const newTheme = !prev ? 'dark' : 'light';
-            // Update the theme in localStorage
+            // Update the theme in localStorage//
             localStorage.setItem('theme', newTheme);
-            // Set the theme to the root element (html or body)
+            // Set the theme to the root element (html or body)//
             document.documentElement.setAttribute('data-theme', newTheme);
             return !prev;
         });
@@ -71,6 +72,7 @@ const Home = () => {
             </div>
             <Banner></Banner>
             <LatestVisa loadedVisas={loadedVisas}></LatestVisa>
+            <KeyFeature></KeyFeature>
         </div>
     );
 };
