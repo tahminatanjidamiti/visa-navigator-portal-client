@@ -24,7 +24,7 @@ const Banner = () => {
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
                     <img
-                        src="https://i.ibb.co.com/M5LGCwk/visitor-visa-application-concept.jpg"
+                        src="https://i.ibb.co.com/68j4csB/high-angle-passport-tickets-arrangement.jpg"
                         className="w-full h-full object-cover rounded-3xl" />
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <a href="#slide2" className="btn btn-circle btn-info">❮</a>

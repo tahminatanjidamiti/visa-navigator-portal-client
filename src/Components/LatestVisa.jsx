@@ -9,10 +9,10 @@ const LatestVisa = ({loadedVisas}) => {
     return (
       <div className="bg-[#F4F3F0] p-8 md:p-24">
         <h2 className="text-3xl font-extrabold mb-8 flex justify-center items-center mx-auto">Latest Visas</h2>
-        <p className='my-5 w-9/12 mx-auto text-center'>Explore tailored options, detailed requirements, and insider insights to simplify your journey and make global travel dreams a reality.</p>
+        <p className='my-10 w-9/12 mx-auto text-center'>Explore tailored options, detailed requirements, and insider insights to simplify your journey and make global travel dreams a reality.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {visas.map((visa) => (
-            <div key={visa._id} className="card w-full bg-white shadow-lg">
+            <div key={visa._id} className="card border-4 border-base-900 w-full bg-white shadow-lg">
               <figure>
                 <img src={visa.country_image} alt={visa.country_name} className="h-48 w-full object-cover" />
               </figure>
