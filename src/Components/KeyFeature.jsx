@@ -17,7 +17,7 @@ const KeyFeature = () => {
                     Our Standout {' '}
                     <span style={{ color: 'green', fontWeight: 'bold', paddingLeft: '10px' }}>
                         <Typewriter
-                            words={['Highlight', 'Key Feature!']}
+                            words={['Highlight', 'Feature!']}
                             loop={5}
                             cursor
                             cursorStyle='_'
