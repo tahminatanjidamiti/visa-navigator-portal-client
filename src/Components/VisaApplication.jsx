@@ -17,7 +17,7 @@ const VisaApplication = () => {
       .catch((error) => {
         Swal.fire({
           title: "Error!",
-          text: "There was an error fetaching search result.",
+          text: "There was an error fetching search result.",
           icon: "error"
         });
       });

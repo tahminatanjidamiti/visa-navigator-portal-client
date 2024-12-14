@@ -13,3 +13,8 @@ body {
 .animate__fadeInDown {
   animation-duration: 5s;
 }
+
+.active{
+  color: aqua;
+  font-size: larger;
+}

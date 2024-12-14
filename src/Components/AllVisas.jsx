@@ -27,7 +27,7 @@ const AllVisas = () => {
         <div className="dropdown">
           <button
             tabIndex={0}
-            className="btn bg-teal-500 text-white dropdown-toggle"
+            className="btn bg-sky-400 text-white dropdown-toggle"
           >
             {selectedType === 'All' ? 'Filter by Visa Type' : `Filtered: ${selectedType}`}
           </button>
