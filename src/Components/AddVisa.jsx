@@ -37,7 +37,7 @@ const AddVisa = () => {
         };
 
         // Send data to the server
-        fetch('http://localhost:5000/all_visas', {
+        fetch('https://my-tenth-assignment-server-taupe.vercel.app/all_visas', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

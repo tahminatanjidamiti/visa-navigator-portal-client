@@ -31,7 +31,7 @@ const VisaDetails = () => {
 
     };
 
-    fetch(`http://localhost:5000/visaApplication`, {
+    fetch(`https://my-tenth-assignment-server-taupe.vercel.app/visaApplication`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const VisaDetails = () => {
         navigate(`/my_visa_application/${formData.email}`);
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err);
         Swal.fire('Error', 'Failed to submit application. Please try again.', 'error');
       });
   };

@@ -9,7 +9,7 @@ const VisaApplication = () => {
   const [applications, setApplications] = useState(loaderData);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/visaApplication/${applications[0]?.email}?searchParams=${search}`)
+    fetch(`https://my-tenth-assignment-server-taupe.vercel.app/visaApplication/${applications[0]?.email}?searchParams=${search}`)
       .then((res) => res.json())
       .then((data) => {
         setApplications(data);
@@ -33,7 +33,7 @@ const VisaApplication = () => {
       confirmButtonText: 'Yes, cancel it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/visaApplication/${_id}`,
+        fetch(`https://my-tenth-assignment-server-taupe.vercel.app/visaApplication/${_id}`,
           { method: 'DELETE' })
           .then(res => res.json())
           .then(data => {

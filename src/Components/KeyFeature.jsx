@@ -3,11 +3,11 @@ import { Typewriter } from 'react-simple-typewriter'
 
 const KeyFeature = () => {
     const handleType = (count) => {
-        console.log(`Word typed: ${count}`);
+        // console.log(`Word typed: ${count}`);
     };
     
       const handleDone = () => {
-        console.log(`Done after 5 loops!`)
+        // console.log(`Done after 5 loops!`)
       }
 
     return (

@@ -19,7 +19,7 @@ const MyAddedVisas = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/all_visas/${id}`, {
+                fetch(`https://my-tenth-assignment-server-taupe.vercel.app/all_visas/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -47,7 +47,7 @@ const MyAddedVisas = () => {
             description: e.target.description.value,
         };
 
-        fetch(`http://localhost:5000/all_visas/${selectedVisa._id}`, {
+        fetch(`https://my-tenth-assignment-server-taupe.vercel.app/all_visas/${selectedVisa._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedVisa),
