@@ -9,6 +9,11 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [hydrated, setHydrated] = useState(false); // Track hydration
+
+    useEffect(() => {
+        setHydrated(true); // Mark hydration complete once mounted
+    }, []);
 
 
     const createNewUser = (email, password) => {
@@ -46,6 +51,9 @@ const AuthProvider = ({ children }) => {
         loading,
         updateUserProfile,
 
+    }
+    if (!hydrated || loading) {
+        return <div>Loading...</div>;
     }
     return (
         <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

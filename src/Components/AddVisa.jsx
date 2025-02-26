@@ -66,7 +66,8 @@ const AddVisa = () => {
     };
 
     return (
-        <div className='bg-[#F4F3F0] p-24'>
+        <div className='px-20 py-10 relative m-4'>
+            <div className="absolute inset-0 animate-neon-glow -z-10"></div>
             <h2 className='text-3xl font-extrabold text-center'>Add a Visa</h2>
             <form onSubmit={handleAddVisa}>
                 <div className='md:flex mb-8'>

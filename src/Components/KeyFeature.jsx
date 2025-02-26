@@ -18,7 +18,7 @@ const KeyFeature = () => {
                     <span style={{ color: 'green', fontWeight: 'bold', paddingLeft: '10px' }}>
                         <Typewriter
                             words={['Highlight', 'Feature!']}
-                            loop={5}
+                            loop={Infinity}
                             cursor
                             cursorStyle='_'
                             typeSpeed={70}
@@ -37,26 +37,26 @@ const KeyFeature = () => {
                     <div className="card-body items-center text-center">
                         <img className='w-40 h-40 rounded-full' src="https://img.icons8.com/?size=60&id=cjaav1k9qYa5&format=gif" alt="Customer support icon!" />
                         <div className="card-actions justify-end">
-                            <p className='font-bold text-2xl'>Fast & Friendly Support</p>
+                            <p className='font-bold text-2xl text-black'>Fast & Friendly Support</p>
                         </div>
                     </div>
 
                     <div className="card-body items-center text-center">
                         <img className='w-40 h-40 rounded-full' src="https://img.icons8.com/?size=48&id=crX4uqprHPro&format=gif" alt="Fast icon" />
                         <div className="card-actions justify-end">
-                            <p className='font-bold text-2xl'>Fast Performance</p>
+                            <p className='font-bold text-2xl text-black'>Fast Performance</p>
                         </div>
                     </div>
                     <div className="card-body items-center text-center">
                         <img className='w-40 h-40 rounded-full' src="https://img.icons8.com/?size=48&id=9XUigfHIZFH9&format=gif" alt="Update icon!" />
                         <div className="card-actions justify-end">
-                            <p className='font-bold text-2xl'>Easy Lifetime Update</p>
+                            <p className='font-bold text-2xl text-black'>Easy Lifetime Update</p>
                         </div>
                     </div>
                     <div className="card-body items-center text-center">
                         <img className='w-40 h-40 rounded-full' src="https://img.icons8.com/?size=40&id=ptfr1HHrBeLT&format=gif" alt="Document icon!" />
                         <div className="card-actions justify-end">
-                            <p className='font-bold text-2xl'>Well-Defined Documentation Structure</p>
+                            <p className='font-bold text-2xl text-black'>Well-Defined Documentation Structure</p>
                         </div>
                     </div>
 
